@@ -6,7 +6,7 @@
 
 linux {
     isEmpty(PREFIX) {
-        PREFIX = /mnt/utmp/castersoundboard
+        PREFIX = /usr
     }
     BINDIR = $$PREFIX/bin
     DATADIR = $$PREFIX/share
