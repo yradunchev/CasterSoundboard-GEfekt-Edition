@@ -42,7 +42,7 @@ CasterBoard::CasterBoard(QWidget* parent) : QWidget(parent)
     // int_to_player_key
     int_to_player_key = new QMap<int,QString>
     {
-// OpenPandora Layout
+//  1366 x 768 Layout
         {0,"1"},{1,"2"},{2,"3"},{3,"4"},{4,"5"},{5,"6"},{6,"7"},
         {7,"Q"},{8,"W"},{9,"E"},{10,"R"},{11,"T"},{12,"Y"},{13,"U"},
         {14,"A"},{15,"S"},{16,"D"},{17,"F"},{18,"G"},{19,"H"},{20,"J"}
@@ -50,7 +50,7 @@ CasterBoard::CasterBoard(QWidget* parent) : QWidget(parent)
     // keyboard_key_to_player_key
     keyboard_key_to_player_key = new QMap<int,QString>
     {
-// OpenPandora Layout
+// 1366 x 768 Layout
         {Qt::Key_1,"1"},{Qt::Key_2,"2"},{Qt::Key_3,"3"},{Qt::Key_4,"4"},{Qt::Key_5,"5"},{Qt::Key_6,"6"},{Qt::Key_7,"7"},
         {Qt::Key_Q,"Q"},{Qt::Key_W,"W"},{Qt::Key_E,"E"},{Qt::Key_R,"R"},{Qt::Key_T,"T"},{Qt::Key_Y,"Y"},{Qt::Key_U,"U"},
         {Qt::Key_A,"A"},{Qt::Key_S,"S"},{Qt::Key_D,"D"},{Qt::Key_F,"F"},{Qt::Key_G,"G"},{Qt::Key_H,"H"},{Qt::Key_J,"J"}
@@ -73,7 +73,7 @@ CasterBoard::CasterBoard(QWidget* parent) : QWidget(parent)
 
         // Update Next Layout
         _board_column += 1;
-// OpenPandora Layout
+// 1366 x 768 Layout
         if(_board_column > 6){
             _board_row += 1;
             _board_column = 0;
