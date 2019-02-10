@@ -100,34 +100,34 @@ CasterPlayerWidget::CasterPlayerWidget(QWidget* parent) : QWidget(parent)
     /* Play Button */
     playStateButton = new QPushButton("");
     playStateButton->setIcon(QIcon(":/res/img/stop.png"));
-    playStateButton->setIconSize(QSize(18,18));
+    playStateButton->setIconSize(QSize(13,13));
     playStateButton->setFlat(true);
     //playStateButton->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Expanding);
     /* Open File Button */
     openFileButton = new QPushButton("");
     openFileButton->setIcon(QIcon(":/res/img/openMusic.png"));
-    openFileButton->setIconSize(QSize(28,28));
+    openFileButton->setIconSize(QSize(13,13));
     openFileButton->setFlat(true);
     /* Set Cue Button */
     setCueButton = new QPushButton("");
     setCueButton->setIcon(QIcon(":/res/img/cue.png"));
-    setCueButton->setIconSize(QSize(28,28));
+    setCueButton->setIconSize(QSize(13,13));
     setCueButton->setFlat(true);
     /* Toggle Loop Button */
     toggleLoopButton = new QPushButton("");
     toggleLoopButton->setIcon(QIcon(":/res/img/no_loop"));
-    toggleLoopButton->setIconSize(QSize(28,28));
+    toggleLoopButton->setIconSize(QSize(13,13));
     toggleLoopButton->setFlat(true);
     /* Sub Menu Button */
     colorPickerButton = new QPushButton("");
     colorPickerButton->setIcon(QIcon(":/res/img/colorPicker.png"));
-    colorPickerButton->setIconSize(QSize(16,16));
+    colorPickerButton->setIconSize(QSize(13,13));
     colorPickerButton->setFlat(true);
     //colorPickerButton->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Expanding);
     /* Edit Notes Button */
     editNotesButton = new QPushButton("");
     editNotesButton->setIcon(QIcon(":/res/img/notes.png"));
-    editNotesButton->setIconSize(QSize(28,28));
+    editNotesButton->setIconSize(QSize(13,13));
     editNotesButton->setFlat(true);
     /* Volume Slider */
     volumeSlider = new QSlider(Qt::Vertical);
@@ -150,7 +150,7 @@ CasterPlayerWidget::CasterPlayerWidget(QWidget* parent) : QWidget(parent)
     trackBar = new QSlider(Qt::Horizontal);
     trackBar->setValue(0);
     trackBar->setStyleSheet("QSlider:horizontal {"
-                                "min-height: 30px;"
+                                "min-height: 20px;"
                                 "}"
                                 "QSlider::groove:horizontal { "
                                 "border: 1px solid #999999; "
@@ -166,7 +166,7 @@ CasterPlayerWidget::CasterPlayerWidget(QWidget* parent) : QWidget(parent)
 
     //Place Widgets
     mainLayout = new QVBoxLayout(this);
-    //mainLayout->setContentsMargins(0,0,0,0);
+    mainLayout->setContentsMargins(3,3,3,3);
 
     subMainLayoutH = new QHBoxLayout;
     subMainLayoutV = new QVBoxLayout;
@@ -184,14 +184,15 @@ CasterPlayerWidget::CasterPlayerWidget(QWidget* parent) : QWidget(parent)
     bottomLayout_TopButtons->addWidget(openFileButton);
     bottomLayout_TopButtons->addWidget(setCueButton);
     bottomLayout_TopButtons->addWidget(toggleLoopButton);
+    bottomLayout_TopButtons->addWidget(colorPickerButton);
 
-    bottomLayout_BottomButtons = new QHBoxLayout;
-    bottomLayout_BottomButtons->addWidget(colorPickerButton);
+    //bottomLayout_BottomButtons = new QHBoxLayout;
+    //bottomLayout_BottomButtons->addWidget(colorPickerButton);
     //bottomLayout_BottomButtons->addWidget(editNotesButton);
 
     bottomLayout = new QVBoxLayout;
     bottomLayout->addLayout(bottomLayout_TopButtons);
-    bottomLayout->addLayout(bottomLayout_BottomButtons);
+    //bottomLayout->addLayout(bottomLayout_BottomButtons);
 
 
     subMainLayoutV->addLayout(topLayout);
@@ -207,9 +208,9 @@ CasterPlayerWidget::CasterPlayerWidget(QWidget* parent) : QWidget(parent)
     //Widget Styling
     this->setMouseTracking(true);
     this->setStyleSheet(CSS_GRAIENT_GREY);
-    QGraphicsDropShadowEffect * dse = new QGraphicsDropShadowEffect();
-    dse->setBlurRadius(10);
-    this->setGraphicsEffect(dse);
+//    QGraphicsDropShadowEffect * dse = new QGraphicsDropShadowEffect();
+//    dse->setBlurRadius(10);
+//    this->setGraphicsEffect(dse);
 
     //Connect Sub-Widget Events
     connect(playStateButton,SIGNAL(clicked()),this,SLOT(playerToggle()));

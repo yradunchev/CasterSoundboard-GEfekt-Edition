@@ -72,7 +72,7 @@ MainWindow::MainWindow(QWidget *parent) : QWidget(parent)
     //~~New Tab~~
     addNewTabButton = new QPushButton;
     addNewTabButton->setIcon(QIcon(":/res/img/newTab.png"));
-    addNewTabButton->setIconSize(QSize(20,20));
+    addNewTabButton->setIconSize(QSize(15,15));
     addNewTabButton->setToolTip("New Tab");
     //addNewTabButton->setFixedSize(30,30);
     //layout->addWidget(addNewTabButton,0,2, Qt::AlignRight);
@@ -80,52 +80,52 @@ MainWindow::MainWindow(QWidget *parent) : QWidget(parent)
     //~~Open Tab~~
     openTabButton = new QPushButton;
     openTabButton->setIcon(QIcon(":/res/img/open.png"));
-    openTabButton->setIconSize(QSize(20,20));
+    openTabButton->setIconSize(QSize(15,15));
     openTabButton->setToolTip("Open Tab");
     //openTabButton->setFixedSize(30,30);
 
     //~~Save Tab~~
     saveTabButton = new QPushButton;
     saveTabButton->setIcon(QIcon(":/res/img/save.png"));
-    saveTabButton->setIconSize(QSize(20,20));
+    saveTabButton->setIconSize(QSize(15,15));
     saveTabButton->setToolTip("Save Tab");
     //saveTabButton->setFixedSize(30,30);
 
     //~~Save As Tab~~
     saveAsTabButton = new QPushButton;
     saveAsTabButton->setIcon(QIcon(":/res/img/save_as.png"));
-    saveAsTabButton->setIconSize(QSize(20,20));
+    saveAsTabButton->setIconSize(QSize(15,15));
     saveAsTabButton->setToolTip("Save Tab As");
     //saveAsTabButton->setFixedSize(40,40);
 
     //~~Stop ALL Sounds~~
     stopAllSoundsButton = new QPushButton;
     stopAllSoundsButton->setIcon(QIcon(":/res/img/stopAll.png"));
-    stopAllSoundsButton->setIconSize(QSize(20,20));
+    stopAllSoundsButton->setIconSize(QSize(15,15));
     stopAllSoundsButton->setToolTip("Stop All Sounds");
 
     //~~Toogle Ducking~~
     toggleAudioDuckingButton = new QPushButton;
     toggleAudioDuckingButton->setIcon(QIcon(":/res/img/duck.png"));
-    toggleAudioDuckingButton->setIconSize(QSize(20,20));
+    toggleAudioDuckingButton->setIconSize(QSize(15,15));
     toggleAudioDuckingButton->setToolTip("Toggle Ducking");
 
     //~~Rename Tab~~
     renameCurrentTabButton = new QPushButton;
     renameCurrentTabButton->setIcon(QIcon(":/res/img/rename.png"));
-    renameCurrentTabButton->setIconSize(QSize(20,20));
+    renameCurrentTabButton->setIconSize(QSize(15,15));
     renameCurrentTabButton->setToolTip("Rename Tab");
 
     //~~OSC Settings~~
     openSoundControlButton = new QPushButton;
     openSoundControlButton->setIcon(QIcon(":/res/img/open_sound_control.png"));
-    openSoundControlButton->setIconSize(QSize(20,20));
+    openSoundControlButton->setIconSize(QSize(15,15));
     openSoundControlButton->setToolTip("OSC Settings");
 
     //~~About Button~~
     aboutButton = new QPushButton;
     aboutButton->setIcon(QIcon(":/res/img/about.png"));
-    aboutButton->setIconSize(QSize(20,20));
+    aboutButton->setIconSize(QSize(15,15));
     aboutButton->setToolTip("About");
     //aboutButton->setFixedSize(30,30);
     //layout->addWidget(aboutButton,0,0, Qt::AlignLeft);
@@ -140,7 +140,7 @@ MainWindow::MainWindow(QWidget *parent) : QWidget(parent)
     mainToolbar->addWidget(renameCurrentTabButton);
     mainToolbar->addWidget(stopAllSoundsButton);
     mainToolbar->addWidget(toggleAudioDuckingButton);
-    mainToolbar->addWidget(openSoundControlButton);
+//    mainToolbar->addWidget(openSoundControlButton);
     mainToolbar->addWidget(aboutButton);
     // Add toolbar to layout
     layout->addWidget(mainToolbar, 0, 0, Qt::AlignLeft);
@@ -152,7 +152,7 @@ MainWindow::MainWindow(QWidget *parent) : QWidget(parent)
 
     // Status Bar
     main_statusbar = new QStatusBar;
-    main_statusbar->setMaximumHeight(5);
+    main_statusbar->setMaximumHeight(10);
     layout->addWidget(main_statusbar);
 
     //SET LAYOUT

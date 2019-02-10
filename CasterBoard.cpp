@@ -45,7 +45,8 @@ CasterBoard::CasterBoard(QWidget* parent) : QWidget(parent)
 //  1366 x 768 Layout
         {0,"1"},{1,"2"},{2,"3"},{3,"4"},{4,"5"},{5,"6"},{6,"7"},
         {7,"Q"},{8,"W"},{9,"E"},{10,"R"},{11,"T"},{12,"Y"},{13,"U"},
-        {14,"A"},{15,"S"},{16,"D"},{17,"F"},{18,"G"},{19,"H"},{20,"J"}
+        {14,"A"},{15,"S"},{16,"D"},{17,"F"},{18,"G"},{19,"H"},{20,"J"},
+        {21,"Z"},{22,"X"},{23,"C"},{24,"V"},{25,"B"},{26,"N"},{27,"M"},
     };
     // keyboard_key_to_player_key
     keyboard_key_to_player_key = new QMap<int,QString>
@@ -53,7 +54,8 @@ CasterBoard::CasterBoard(QWidget* parent) : QWidget(parent)
 // 1366 x 768 Layout
         {Qt::Key_1,"1"},{Qt::Key_2,"2"},{Qt::Key_3,"3"},{Qt::Key_4,"4"},{Qt::Key_5,"5"},{Qt::Key_6,"6"},{Qt::Key_7,"7"},
         {Qt::Key_Q,"Q"},{Qt::Key_W,"W"},{Qt::Key_E,"E"},{Qt::Key_R,"R"},{Qt::Key_T,"T"},{Qt::Key_Y,"Y"},{Qt::Key_U,"U"},
-        {Qt::Key_A,"A"},{Qt::Key_S,"S"},{Qt::Key_D,"D"},{Qt::Key_F,"F"},{Qt::Key_G,"G"},{Qt::Key_H,"H"},{Qt::Key_J,"J"}
+        {Qt::Key_A,"A"},{Qt::Key_S,"S"},{Qt::Key_D,"D"},{Qt::Key_F,"F"},{Qt::Key_G,"G"},{Qt::Key_H,"H"},{Qt::Key_J,"J"},
+        {Qt::Key_Z,"Z"},{Qt::Key_X,"X"},{Qt::Key_C,"C"},{Qt::Key_V,"V"},{Qt::Key_B,"B"},{Qt::Key_N,"N"},{Qt::Key_M,"M"}
     };
     // players
     players = new QMap<QString, CasterPlayerWidget*>();
