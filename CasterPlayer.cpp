@@ -100,9 +100,9 @@ CasterPlayerWidget::CasterPlayerWidget(QWidget* parent) : QWidget(parent)
     /* Play Button */
     playStateButton = new QPushButton("");
     playStateButton->setIcon(QIcon(":/res/img/stop.png"));
-    playStateButton->setIconSize(QSize(13,13));
+    playStateButton->setIconSize(QSize(30,30));
     playStateButton->setFlat(true);
-    //playStateButton->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Expanding);
+    playStateButton->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Expanding);
     /* Open File Button */
     openFileButton = new QPushButton("");
     openFileButton->setIcon(QIcon(":/res/img/openMusic.png"));
@@ -180,19 +180,24 @@ CasterPlayerWidget::CasterPlayerWidget(QWidget* parent) : QWidget(parent)
     
     /* Layout: Bottom Player Buttons */
     bottomLayout_TopButtons = new QHBoxLayout;
-    //bottomLayout_TopButtons->addWidget(playStateButton);
-    bottomLayout_TopButtons->addWidget(openFileButton);
-    bottomLayout_TopButtons->addWidget(setCueButton);
-    bottomLayout_TopButtons->addWidget(toggleLoopButton);
-    bottomLayout_TopButtons->addWidget(colorPickerButton);
+    bottomLayout_TopButtons->addWidget(playStateButton);
+    //bottomLayout_TopButtons->addWidget(openFileButton);
+    //bottomLayout_TopButtons->addWidget(setCueButton);
+    //bottomLayout_TopButtons->addWidget(toggleLoopButton);
+    //bottomLayout_TopButtons->addWidget(colorPickerButton);
 
-    //bottomLayout_BottomButtons = new QHBoxLayout;
-    //bottomLayout_BottomButtons->addWidget(colorPickerButton);
+    bottomLayout_BottomButtons = new QHBoxLayout;
+    //bottomLayout_BottomButtons->addWidget(playStateButton);
     //bottomLayout_BottomButtons->addWidget(editNotesButton);
+    bottomLayout_BottomButtons->addWidget(openFileButton);
+    bottomLayout_BottomButtons->addWidget(setCueButton);
+    bottomLayout_BottomButtons->addWidget(toggleLoopButton);
+    bottomLayout_BottomButtons->addWidget(colorPickerButton);
+
 
     bottomLayout = new QVBoxLayout;
     bottomLayout->addLayout(bottomLayout_TopButtons);
-    //bottomLayout->addLayout(bottomLayout_BottomButtons);
+    bottomLayout->addLayout(bottomLayout_BottomButtons);
 
 
     subMainLayoutV->addLayout(topLayout);
@@ -281,7 +286,7 @@ void CasterPlayerWidget::playerToggle()
     volumeSlider->setValue(playerState->volume);
     if(player->state() == QMediaPlayer::PlayingState)
     {
-        player->stop();
+        player->pause();
     }
     else if (player->state() == QMediaPlayer::StoppedState)
     {
@@ -807,7 +812,7 @@ void CasterPlayerWidget::paintEvent(QPaintEvent *event)
         lgBrush.setColorAt(0.83,QColor(162,218,245,255));
         lgBrush.setColorAt(1.0,QColor(189,243,253,255));
 
-        playStateImage->load(":/res/img/playState_playing.png");
+//        playStateImage->load(":/res/img/playState_playing.png");
     }
     else if(player->state() == QMediaPlayer::PausedState)
     {
@@ -820,7 +825,7 @@ void CasterPlayerWidget::paintEvent(QPaintEvent *event)
         lgBrush.setColorAt(0.83,QColor(246,243,56,255));
         lgBrush.setColorAt(1.0,QColor(253,217,75,255));
 
-        playStateImage->load(":/res/img/playState_paused.png");
+//        playStateImage->load(":/res/img/playState_paused.png");
     }
     else if (player->state() == QMediaPlayer::StoppedState)
     {
@@ -833,12 +838,12 @@ void CasterPlayerWidget::paintEvent(QPaintEvent *event)
         lgBrush.setColorAt(0.83,QColor(246,56,78,255));
         lgBrush.setColorAt(1.0,QColor(253,75,128,255));
 
-        playStateImage->load(":/res/img/playState_stopped.png");
+//        playStateImage->load(":/res/img/playState_stopped.png");
     }
     p.fillRect(rec,lgBrush);
 
     // Draw Play State
-    p.drawImage(this->width()/2 - playStateImage->width()/2, this->height()/2 - playStateImage->height()/2, *playStateImage);
+//        p.drawImage(this->width()/2 - playStateImage->width()/2, this->height()/2 - playStateImage->height()/2, *playStateImage);
 
     // Draw Audio Ducking Indicator
     if(isAudioDucked){
