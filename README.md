@@ -3,7 +3,7 @@
 A fork from [CasterSondboard by JupiterBroadcasting](https://github.com/JupiterBroadcasting/CasterSoundboard), adapted to 1366 x 768 displays.
 
 
-[![full screen](screenshots/20190210132502.png)]
+![full screen](screenshots/20190210132502.png)
 
 ## Build from source
 
