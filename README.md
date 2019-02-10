@@ -6,8 +6,6 @@ A fork from [CasterSondboard by JupiterBroadcasting](https://github.com/JupiterB
 
 You can specify the target directory using the `PREFIX` `qmake` variable (default: `/usr`).
 
-Now run `qmake`, this will auto generate a makefile:
-
 ```
 $ qmake PREFIX=/usr/local
 ```
