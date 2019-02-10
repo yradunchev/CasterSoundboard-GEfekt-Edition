@@ -81,7 +81,7 @@ CasterPlayerWidget::CasterPlayerWidget(QWidget* parent) : QWidget(parent)
     newMediaLoadedFromProfile = false;
 
     //Set-Up Widget Layout
-    soundNameLabel = new QLabel("<Drop File>");
+    soundNameLabel = new QLabel("empty");
     soundNameLabel->setAlignment(Qt::AlignTop | Qt::AlignLeft);
     QFont sNLF("Georgia",10,-1,false); sNLF.setBold(true);
     soundNameLabel->setFont(sNLF);
@@ -177,7 +177,7 @@ CasterPlayerWidget::CasterPlayerWidget(QWidget* parent) : QWidget(parent)
 
     centerLayout = new QHBoxLayout;
     centerLayout->addWidget(soundNameLabel);
-
+    
     /* Layout: Bottom Player Buttons */
     bottomLayout_TopButtons = new QHBoxLayout;
     //bottomLayout_TopButtons->addWidget(playStateButton);
