@@ -87,7 +87,7 @@ CasterPlayerWidget::CasterPlayerWidget(QWidget* parent) : QWidget(parent)
     soundNameLabel->setFont(sNLF);
     soundNameLabel->setWordWrap(true);
     soundNameLabel->setMaximumWidth(150);
-    //soundNameLabel->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Expanding);
+    soundNameLabel->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Expanding);
     hotKeyLabel = new QLabel(*hotKeyLetter);
     hotKeyLabel->setAlignment(Qt::AlignCenter);
     hotKeyLabel->setFont(QFont("Georgia",13,-1,false));
@@ -106,7 +106,7 @@ CasterPlayerWidget::CasterPlayerWidget(QWidget* parent) : QWidget(parent)
     /* Open File Button */
     openFileButton = new QPushButton("");
     openFileButton->setIcon(QIcon(":/res/img/openMusic.png"));
-    openFileButton->setIconSize(QSize(13,13));
+    openFileButton->setIconSize(QSize(30,30));
     openFileButton->setFlat(true);
     /* Set Cue Button */
     setCueButton = new QPushButton("");
@@ -180,7 +180,7 @@ CasterPlayerWidget::CasterPlayerWidget(QWidget* parent) : QWidget(parent)
     
     /* Layout: Bottom Player Buttons */
     bottomLayout_TopButtons = new QHBoxLayout;
-    bottomLayout_TopButtons->addWidget(playStateButton);
+    //bottomLayout_TopButtons->addWidget(playStateButton);
     //bottomLayout_TopButtons->addWidget(openFileButton);
     //bottomLayout_TopButtons->addWidget(setCueButton);
     //bottomLayout_TopButtons->addWidget(toggleLoopButton);
@@ -190,9 +190,10 @@ CasterPlayerWidget::CasterPlayerWidget(QWidget* parent) : QWidget(parent)
     //bottomLayout_BottomButtons->addWidget(playStateButton);
     //bottomLayout_BottomButtons->addWidget(editNotesButton);
     bottomLayout_BottomButtons->addWidget(openFileButton);
-    bottomLayout_BottomButtons->addWidget(setCueButton);
-    bottomLayout_BottomButtons->addWidget(toggleLoopButton);
-    bottomLayout_BottomButtons->addWidget(colorPickerButton);
+    bottomLayout_BottomButtons->setAlignment(Qt::AlignBottom | Qt::AlignRight);
+    //bottomLayout_BottomButtons->addWidget(setCueButton);
+    //bottomLayout_BottomButtons->addWidget(toggleLoopButton);
+    //bottomLayout_BottomButtons->addWidget(colorPickerButton);
 
 
     bottomLayout = new QVBoxLayout;
@@ -205,10 +206,11 @@ CasterPlayerWidget::CasterPlayerWidget(QWidget* parent) : QWidget(parent)
     subMainLayoutV->addLayout(bottomLayout);
 
     subMainLayoutH->addLayout(subMainLayoutV);
-    subMainLayoutH->addWidget(volumeSlider);
+    //subMainLayoutH->addWidget(volumeSlider);
 
-    mainLayout->addLayout(subMainLayoutH);
-    mainLayout->addWidget(trackBar);
+    // remove track bar  
+     mainLayout->addLayout(subMainLayoutH);
+    // mainLayout->addWidget(trackBar);
 
     //Widget Styling
     this->setMouseTracking(true);
@@ -812,7 +814,7 @@ void CasterPlayerWidget::paintEvent(QPaintEvent *event)
         lgBrush.setColorAt(0.83,QColor(162,218,245,255));
         lgBrush.setColorAt(1.0,QColor(189,243,253,255));
 
-//        playStateImage->load(":/res/img/playState_playing.png");
+        playStateImage->load(":/res/img/playState_playing.png");
     }
     else if(player->state() == QMediaPlayer::PausedState)
     {
@@ -825,7 +827,7 @@ void CasterPlayerWidget::paintEvent(QPaintEvent *event)
         lgBrush.setColorAt(0.83,QColor(246,243,56,255));
         lgBrush.setColorAt(1.0,QColor(253,217,75,255));
 
-//        playStateImage->load(":/res/img/playState_paused.png");
+        playStateImage->load(":/res/img/playState_paused.png");
     }
     else if (player->state() == QMediaPlayer::StoppedState)
     {
@@ -838,12 +840,12 @@ void CasterPlayerWidget::paintEvent(QPaintEvent *event)
         lgBrush.setColorAt(0.83,QColor(246,56,78,255));
         lgBrush.setColorAt(1.0,QColor(253,75,128,255));
 
-//        playStateImage->load(":/res/img/playState_stopped.png");
+        playStateImage->load(":/res/img/playState_stopped.png");
     }
     p.fillRect(rec,lgBrush);
 
     // Draw Play State
-//        p.drawImage(this->width()/2 - playStateImage->width()/2, this->height()/2 - playStateImage->height()/2, *playStateImage);
+        //p.drawImage(this->width()/2 - playStateImage->width()/2, this->height()/2 - playStateImage->height()/2, *playStateImage);
 
     // Draw Audio Ducking Indicator
     if(isAudioDucked){

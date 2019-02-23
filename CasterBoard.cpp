@@ -43,19 +43,19 @@ CasterBoard::CasterBoard(QWidget* parent) : QWidget(parent)
     int_to_player_key = new QMap<int,QString>
     {
 //  1366 x 768 Layout
-        {0,"1"},{1,"2"},{2,"3"},{3,"4"},{4,"5"},{5,"6"},{6,"7"},
-        {7,"Q"},{8,"W"},{9,"E"},{10,"R"},{11,"T"},{12,"Y"},{13,"U"},
-        {14,"A"},{15,"S"},{16,"D"},{17,"F"},{18,"G"},{19,"H"},{20,"J"},
-        {21,"Z"},{22,"X"},{23,"C"},{24,"V"},{25,"B"},{26,"N"},{27,"M"},
+        {0,"1"},{1,"2"},{2,"3"},{3,"4"},{4,"5"},{5,"6"},{6,"7"},{7,"8"},{8,"9"},{9,"0"},
+        {10,"Q"},{11,"W"},{12,"E"},{13,"R"},{14,"T"},{15,"Y"},{16,"U"},{17,"I"},{18,"O"},{19,"P"},
+        {20,"A"},{21,"S"},{22,"D"},{23,"F"},{24,"G"},{25,"H"},{26,"J"},{27,"K"},{28,"L"},{29,";"},
+        {30,"Z"},{31,"X"},{32,"C"},{33,"V"},{34,"B"},{35,"N"},{36,"M"},{37,","},{38,"."},{39,"/"}
     };
     // keyboard_key_to_player_key
     keyboard_key_to_player_key = new QMap<int,QString>
     {
 // 1366 x 768 Layout
-        {Qt::Key_1,"1"},{Qt::Key_2,"2"},{Qt::Key_3,"3"},{Qt::Key_4,"4"},{Qt::Key_5,"5"},{Qt::Key_6,"6"},{Qt::Key_7,"7"},
-        {Qt::Key_Q,"Q"},{Qt::Key_W,"W"},{Qt::Key_E,"E"},{Qt::Key_R,"R"},{Qt::Key_T,"T"},{Qt::Key_Y,"Y"},{Qt::Key_U,"U"},
-        {Qt::Key_A,"A"},{Qt::Key_S,"S"},{Qt::Key_D,"D"},{Qt::Key_F,"F"},{Qt::Key_G,"G"},{Qt::Key_H,"H"},{Qt::Key_J,"J"},
-        {Qt::Key_Z,"Z"},{Qt::Key_X,"X"},{Qt::Key_C,"C"},{Qt::Key_V,"V"},{Qt::Key_B,"B"},{Qt::Key_N,"N"},{Qt::Key_M,"M"}
+        {Qt::Key_1,"1"},{Qt::Key_2,"2"},{Qt::Key_3,"3"},{Qt::Key_4,"4"},{Qt::Key_5,"5"},{Qt::Key_6,"6"},{Qt::Key_7,"7"},{Qt::Key_8,"8"},{Qt::Key_9,"9"},{Qt::Key_0,"0"},
+        {Qt::Key_Q,"Q"},{Qt::Key_W,"W"},{Qt::Key_E,"E"},{Qt::Key_R,"R"},{Qt::Key_T,"T"},{Qt::Key_Y,"Y"},{Qt::Key_U,"U"},{Qt::Key_I,"I"},{Qt::Key_O,"O"},{Qt::Key_P,"P"},
+        {Qt::Key_A,"A"},{Qt::Key_S,"S"},{Qt::Key_D,"D"},{Qt::Key_F,"F"},{Qt::Key_G,"G"},{Qt::Key_H,"H"},{Qt::Key_J,"J"},{Qt::Key_K,"K"},{Qt::Key_L,"L"},{Qt::Key_Semicolon,";"},
+        {Qt::Key_Z,"Z"},{Qt::Key_X,"X"},{Qt::Key_C,"C"},{Qt::Key_V,"V"},{Qt::Key_B,"B"},{Qt::Key_N,"N"},{Qt::Key_M,"M"},{Qt::Key_Comma,","},{Qt::Key_Period,"."},{Qt::Key_Slash,"/"},
     };
     // players
     players = new QMap<QString, CasterPlayerWidget*>();
@@ -76,7 +76,7 @@ CasterBoard::CasterBoard(QWidget* parent) : QWidget(parent)
         // Update Next Layout
         _board_column += 1;
 // 1366 x 768 Layout
-        if(_board_column > 6){
+        if(_board_column > 9){
             _board_row += 1;
             _board_column = 0;
         }
