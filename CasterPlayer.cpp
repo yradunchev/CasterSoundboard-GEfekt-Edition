@@ -800,9 +800,10 @@ void CasterPlayerWidget::paintEvent(QPaintEvent *event)
 
     // Set Progressbar Dimensions
     QLinearGradient lgBrush(0,0,0,this->height());
-    QRect rec(0,0,this->getProgressWidth(),this->height());
+//    QRect rec(0,0,this->getProgressWidth(),this->height());
+    QRect rec(0,this->height() - this->getProgressWidth(),this->width(),this->height());
 
-    // Draw Progressbar
+// Draw Progressbar
     if(player->state() == QMediaPlayer::PlayingState)
     {
         lgBrush.setColorAt(0.0,QColor(184,225,252,255));
@@ -845,8 +846,7 @@ void CasterPlayerWidget::paintEvent(QPaintEvent *event)
     p.fillRect(rec,lgBrush);
 
     // Draw Play State
-        //p.drawImage(this->width()/2 - playStateImage->width()/2, this->height()/2 - playStateImage->height()/2, *playStateImage);
-
+        p.drawImage(this->width()/2 - playStateImage->scaled(32,32).width()/2, this->height()/2 - playStateImage->scaled(32,32).height()/2, playStateImage->scaled(32,32));
     // Draw Audio Ducking Indicator
     if(isAudioDucked){
         playStateImage->load(":/res/img/33_percent.png");
