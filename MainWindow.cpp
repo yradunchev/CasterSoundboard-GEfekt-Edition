@@ -64,6 +64,8 @@ MainWindow::MainWindow(QWidget *parent) : QWidget(parent)
     //SET WINDOW PROPETIES
     this->setWindowTitle("CasterSoundboard");
     this->setWindowIcon(QIcon(":/res/img/app.png"));
+    this->setWindowState(Qt::WindowMaximized);
+    //this->setWindowState(Qt::WindowFullScreen);
 
     //DENFINE LAYOUT
     QGridLayout *layout = new QGridLayout;
