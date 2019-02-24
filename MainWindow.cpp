@@ -103,7 +103,7 @@ MainWindow::MainWindow(QWidget *parent) : QWidget(parent)
     //~~Stop ALL Sounds~~
     stopAllSoundsButton = new QPushButton;
     stopAllSoundsButton->setIcon(QIcon(":/res/img/stopAll.png"));
-    stopAllSoundsButton->setIconSize(QSize(15,15));
+    stopAllSoundsButton->setIconSize(QSize(30,30));
     stopAllSoundsButton->setToolTip("Stop All Sounds");
 
     //~~Toogle Ducking~~
@@ -130,19 +130,19 @@ MainWindow::MainWindow(QWidget *parent) : QWidget(parent)
     aboutButton->setIconSize(QSize(15,15));
     aboutButton->setToolTip("About");
     //aboutButton->setFixedSize(30,30);
-    //layout->addWidget(aboutButton,0,0, Qt::AlignLeft);
+    //layout->addWidget(aboutButton,0,0, Qt::AlignRight);
 
     //======Main Toolbar=========
     mainToolbar = new QToolBar;
     // Add buttons
+    mainToolbar->addWidget(stopAllSoundsButton);
     mainToolbar->addWidget(addNewTabButton);
     mainToolbar->addWidget(openTabButton);
     mainToolbar->addWidget(saveTabButton);
     mainToolbar->addWidget(saveAsTabButton);
     mainToolbar->addWidget(renameCurrentTabButton);
-    mainToolbar->addWidget(stopAllSoundsButton);
     mainToolbar->addWidget(toggleAudioDuckingButton);
-//    mainToolbar->addWidget(openSoundControlButton);
+    mainToolbar->addWidget(openSoundControlButton);
     mainToolbar->addWidget(aboutButton);
     // Add toolbar to layout
     layout->addWidget(mainToolbar, 0, 0, Qt::AlignLeft);
