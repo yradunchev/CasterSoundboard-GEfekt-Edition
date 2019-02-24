@@ -62,7 +62,7 @@ MainWindow::MainWindow(QWidget *parent) : QWidget(parent)
     oscConfigPicker = new CasterOSCServerConfigPicker("0.0.0.0", inbound_port, *outbound_ipv4, outbound_port);
 
     //SET WINDOW PROPETIES
-    this->setWindowTitle("CasterSoundboard");
+    this->setWindowTitle("CasterSoundboard GEfekt Edition");
     this->setWindowIcon(QIcon(":/res/img/app.png"));
     this->setWindowState(Qt::WindowMaximized);
     //this->setWindowState(Qt::WindowFullScreen);
@@ -229,7 +229,7 @@ void MainWindow::aboutBox()
 {
     QMessageBox msgBox;
     msgBox.setText("CasterSoundboard (v1.0) Beta<br>Author: <a href=""https://github.com/covarianttensor"">Oscar Cerna</a><br>e-mail: <a href=mailto:covarianttensor@gmail.com>covarianttensor@gmail.com</a><br>License: <a href=""https://github.com/JupiterBroadcasting/CasterSoundboard/blob/master/LICENSE"">LGPL v3</a><br>© 2013-2017 Oscar Cerna");
-    msgBox.setInformativeText("<a href=""https://github.com/yradunchev/CasterSoundboard_1366x768"">GovorenEfekt 2019-1 Edition</a><br>Fork by: <a href=""https://govorenefekt.com"">Govoren Efekt</a><br>License: <a href=""https://github.com/yradunchev/CasterSoundboard_1366x768/blob/master/LICENSE.md"">GPL v3</a>");
+    msgBox.setInformativeText("<a href=""https://github.com/yradunchev/CasterSoundboard-GEfekt-Edition"">GEfekt 2019-2 Edition</a><br>Fork by: <a href=""https://govorenefekt.com"">Govoren Efekt</a><br>License: <a href=""https://github.com/yradunchev/CasterSoundboard_1366x768/blob/master/LICENSE.md"">GPL v3</a>");
     msgBox.setStandardButtons(QMessageBox::Close);
     msgBox.setDefaultButton(QMessageBox::Close);
     msgBox.setModal(true);
