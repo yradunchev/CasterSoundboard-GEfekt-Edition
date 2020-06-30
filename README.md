@@ -1,3 +1,5 @@
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U7U51VFGK)
+
 # CasterSoundboard GEfekt Edition
 
 A fork from [CasterSondboard by JupiterBroadcasting](https://github.com/JupiterBroadcasting/CasterSoundboard), clean interface.
